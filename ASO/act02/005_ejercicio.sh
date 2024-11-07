@@ -23,6 +23,8 @@ for usuario in "$@"; do
 		echo "Generando constraseña..."
 		echo "$usuario:$usuario" | chpasswd
 		chage -d 0 "$usuario"
+  		# passwd -e $usuario
+    		# la línea de arriba la puso el profesor en vez de la de chage -d de encima de esta
 		echo "Usuario creado con éxito"
 		echo "______________________________"
 	fi
