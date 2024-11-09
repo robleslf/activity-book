@@ -1,0 +1,23 @@
+#!/bin/bash
+
+numero_aleatorio=$(( RANDOM % 100 + 1))
+
+banderita=0
+contador=0
+
+while [ $banderita -eq 0 ]; do
+	read -p "Dime un número del 1 al 100: " numero_usuario
+
+	if [ $numero_aleatorio -gt $numero_usuario ]; then
+		echo "El número que buscas es mayor."
+	elif [ $numero_aleatorio -lt $numero_usuario ]; then
+		echo "El número que buscas es menor."
+	else
+		echo "Acertaste!"
+		banderita=1
+	fi
+	contador=$((contador + 1))
+done
+
+
+echo "Lo adivinaste en $contador intentos."
